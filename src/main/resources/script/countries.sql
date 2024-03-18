@@ -1,0 +1,18 @@
+INSERT INTO `cs544-examples`.`country` (id, code, name, population) VALUES
+(	1	,'USA', 'United States', 331002651),
+(	2	,'CHN', 'China', 1444216107),
+(	3	,'IND', 'India', 1380004385),
+(	4	,'IDN', 'Indonesia', 273523615),
+(	5	,'PAK', 'Pakistan', 220892340),
+(	6	,'BRA', 'Brazil', 212559417),
+(	7	,'NGA', 'Nigeria', 206139589),
+(	8	,'BGD', 'Bangladesh', 164689383),
+(	9	,'RUS', 'Russia', 145934462),
+(	10	,'MEX', 'Mexico', 128932753),
+(	11	,'JPN', 'Japan', 126476461),
+(	12	,'DEU', 'Germany', 83783942),
+(	13	,'FRA', 'France', 65273511),
+(	14	,'GBR', 'United Kingdom', 67886011),
+(	15	,'ITA', 'Italy', 60461826),
+(	16	,'CAN', 'Canada', 37742154),
+(	17	,'AUS', 'Australia', 25499884);

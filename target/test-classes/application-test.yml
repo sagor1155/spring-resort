@@ -1,0 +1,8 @@
+# Security enable/disable
+spring:
+  profiles:
+    active: test
+
+security:
+  basic:
+    enabled: false

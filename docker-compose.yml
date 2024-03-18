@@ -1,0 +1,43 @@
+version: '3.3'
+
+services:
+  resort-ms:
+    image: ea/resort-management-system:latest
+    restart: on-failure
+    expose:
+      - '8080'
+    ports:
+      - '8080:8080'
+    networks:
+      - ea-project-network
+    links:
+      - db
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: cs544-examples
+      DB_USER: root
+      DB_PASS: 123456
+
+  db:
+    image: mysql:latest
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    networks:
+      - ea-project-network
+    volumes:
+      - mysql-volume:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: cs544-examples
+      MYSQL_ROOT_PASSWORD: 123456
+
+volumes:
+  mysql-volume:
+    driver: local
+
+networks:
+  ea-project-network:
+    driver: bridge

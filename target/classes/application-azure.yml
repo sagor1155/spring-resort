@@ -1,0 +1,57 @@
+DB_HOST: localhost
+DB_NAME: cs544-rms
+DB_USER: root
+DB_PASS: P@ssword123
+
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:3306/${DB_NAME}?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+#
+#  activemq:
+#    broker-url: tcp://localhost:61616
+#    user: admin
+#    password: admin
+#
+#  kafka:
+#    bootstrap-servers: localhost:29092
+#    consumer:
+#      group-id: gid
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      properties:
+#        spring.json.trusted.packages: bank
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework: ERROR
+  pattern:
+    console: "[%d{yyyy-MM-dd HH-mm-ss}] [%level] [%logger] - %msg%n"
+    file: "[%d{yyyy-MM-dd HH-mm-ss}] [%level] [%logger] - %msg%n"
+  file:
+    name: app.log
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health,beans,mappings

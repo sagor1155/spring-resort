@@ -1,0 +1,33 @@
+DB_HOST: localhost
+DB_NAME: cs544-examples
+DB_USER: root
+DB_PASS: 123456
+
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:3306/${DB_NAME}?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework: ERROR
+  pattern:
+    console: "[%d{yyyy-MM-dd HH-mm-ss}] [%level] [%logger] - %msg%n"
+    file: "[%d{yyyy-MM-dd HH-mm-ss}] [%level] [%logger] - %msg%n"
+  file:
+    name: app.log
